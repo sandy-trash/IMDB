@@ -1,17 +1,16 @@
 package testcases;
 
+import org.testng.annotations.Test;
+
+import db.DBOperations;
+import page.Top250Movies;
+
+import org.testng.annotations.BeforeMethod;
+
 import java.io.File;
 import java.io.FileInputStream;
-
 import java.io.IOException;
-
-
 import java.util.Properties;
-
-import org.junit.After;
-import org.junit.Before;
-
-import org.junit.Test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,8 +20,10 @@ import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-
-import page.Top250Movies;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 
 public class IMDBTest {
 
@@ -32,7 +33,7 @@ public class IMDBTest {
 	public static DesiredCapabilities dc = null;
 	public static String failTest = "Fail";
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws IOException {
 
 		// Locates and loads the config properties
@@ -94,24 +95,107 @@ public class IMDBTest {
 		System.out.println("Created browser instance successfully");
 
 	}
-
-	@Test
-	public void getMovie() throws InterruptedException, IOException {
-
+	
+	@Test(priority = 0)
+	public void preRequisite() throws InterruptedException, IOException {
+		
+		// Create page object
 		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
 		top.navigate();
+
+		// Fetch movie details from the page and store in database
 		top.storeData();
+		driver.quit();
+		wbdv = null;
+	}
+
+	@Test(priority = 1)
+	public void verifyMoviesCount() throws InterruptedException, IOException {
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+
+		int count = top.movieNamesEl.size();
+		if (count < 250) {
+			System.out.println(failTest + " : There are only " + count + " movies on the page");
+		} else
+			System.out.println("Pass : Movies count is correct on the page.");
+	}
+
+	@Test(priority = 2)
+	public void verifyMovieReleaseYear() throws InterruptedException, IOException {
+
+		String movie = "The Shawshank Redemption";
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+
+		// Get movie release year
+		String actualYear = top.releaseYearFromPage(movie);
+
+		DBOperations db = new DBOperations();
+		String expectedYear = db.getDetails("year", movie);
+		System.out.println(actualYear+ " "+expectedYear);
+
+		// Assert Movie Release Year displayed on page with DB value
+		try {
+
+			// Assert that expected value matches with actual value
+			Assert.assertEquals(expectedYear.trim(), actualYear.trim());
+
+		} catch (Throwable assertTextException) {
+
+			System.out.println(failTest + " : Error while Asserting movie release year.");
+
+		}
 
 	}
 
-	@After
+	@Test(priority = 3)
+	public void verifyMovieRating() throws InterruptedException, IOException {
+
+		String movie = "The Shawshank Redemption";
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+
+		// Get movie release year
+		String actualRating = top.ratingFromPage(movie);
+
+		DBOperations db = new DBOperations();
+		String expectedRating = db.getDetails("rating", movie);
+		System.out.println(actualRating + " "+expectedRating);
+
+		// Assert Movie Release Year displayed on page with DB value
+		try {
+
+			// Assert that expected value matches with actual value
+			Assert.assertEquals(expectedRating.trim(), actualRating.trim());
+
+		} catch (Throwable assertTextException) {
+
+			System.out.println(failTest + " : Error while Asserting movie rating.");
+
+		}
+
+	}
+
+	@AfterMethod
 	public void tearDown() {
 
 		// Close the driver
 		try {
 
 			driver.quit();
-			driver = null;
+			wbdv = null;
 
 		} catch (Throwable closeDriverException) {
 
@@ -119,6 +203,10 @@ public class IMDBTest {
 
 		}
 
+	}
+
+	@AfterClass
+	public void deleteDB() {
 		// Delete the SQLite db
 		try {
 
@@ -136,5 +224,4 @@ public class IMDBTest {
 
 		}
 	}
-
 }

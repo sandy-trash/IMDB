@@ -9,6 +9,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DBOperations {
+	Connection conn = null;
+
+	public DBOperations() {
+		conn = connect();
+	}
 
 	/**
 	 * Create imdb database
@@ -18,7 +23,6 @@ public class DBOperations {
 		String url = "jdbc:sqlite:" + System.getProperty("user.dir") + "/database/imdb.db";
 
 		try {
-			Connection conn = DriverManager.getConnection(url);
 			if (conn != null) {
 				DatabaseMetaData meta = conn.getMetaData();
 				System.out.println("The driver name is " + meta.getDriverName());
@@ -36,12 +40,11 @@ public class DBOperations {
 	public void createTable() {
 
 		String sql = "CREATE TABLE imdb250 (movie varchar(250), year varchar(10), rating varchar(10))";
-		Connection conn = null;
+
 		Statement stmt = null;
 
 		try {
 
-			conn = connect();
 			stmt = conn.createStatement();
 			stmt.execute(sql);
 
@@ -77,9 +80,8 @@ public class DBOperations {
 	 */
 	public void insert(String movie, String year, String rating) {
 		String sql = "INSERT INTO imdb250(movie,year,rating) VALUES(?,?,?)";
-
+		System.out.println("Inserting " + movie + " :" + year + " :" + rating);
 		try {
-			Connection conn = connect();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, movie);
 			pstmt.setString(2, year);
@@ -118,8 +120,8 @@ public class DBOperations {
 	 */
 	public String getDetails(String column, String movieName) {
 
-		String sql = "SELECT " + column + " FROM imdb250 WHERE movie = " + movieName;
-		Connection conn = null;
+		String sql = "SELECT " + column + " FROM imdb250 WHERE movie = '" + movieName + "'";
+		System.out.println(sql);
 		Statement stmt = null;
 		String result = null;
 
