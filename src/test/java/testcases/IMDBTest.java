@@ -107,8 +107,7 @@ public class IMDBTest {
 
 		// Fetch movie details from the page and store in database
 		top.storeData();
-		driver.quit();
-		wbdv = null;
+		
 	}
 
 	@Test(priority = 1)
