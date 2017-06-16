@@ -1,65 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="68797" started-at="2017-06-14T11:49:57Z" finished-at="2017-06-14T11:51:05Z">
+  <suite name="Default suite" duration-ms="392953" started-at="2017-06-16T10:45:01Z" finished-at="2017-06-16T10:51:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="68797" started-at="2017-06-14T11:49:57Z" finished-at="2017-06-14T11:51:05Z">
-      <class name="testcases.NewTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.NewTest@3bfdc050]" name="setUp" is-config="true" duration-ms="6757" started-at="2017-06-14T17:19:57Z" finished-at="2017-06-14T17:20:03Z">
+    <test name="Default test" duration-ms="392953" started-at="2017-06-16T10:45:01Z" finished-at="2017-06-16T10:51:34Z">
+      <class name="testcases.IMDBTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="7348" started-at="2017-06-16T16:15:01Z" finished-at="2017-06-16T16:15:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="preRequisite()[pri:0, instance:testcases.NewTest@3bfdc050]" name="preRequisite" duration-ms="11858" started-at="2017-06-14T17:20:03Z" finished-at="2017-06-14T17:20:15Z">
+        <test-method status="PASS" signature="preRequisite()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="preRequisite" duration-ms="211414" started-at="2017-06-16T16:15:08Z" finished-at="2017-06-16T16:18:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preRequisite -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.NewTest@3bfdc050]" name="setUp" is-config="true" duration-ms="4818" started-at="2017-06-14T17:20:15Z" finished-at="2017-06-14T17:20:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.NewTest@3bfdc050]" name="tearDown" is-config="true" duration-ms="0" started-at="2017-06-14T17:20:15Z" finished-at="2017-06-14T17:20:15Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1430" started-at="2017-06-16T16:18:39Z" finished-at="2017-06-16T16:18:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="verifyMoviesCount()[pri:1, instance:testcases.NewTest@3bfdc050]" name="verifyMoviesCount" duration-ms="6795" started-at="2017-06-14T17:20:20Z" finished-at="2017-06-14T17:20:27Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="5384" started-at="2017-06-16T16:18:41Z" finished-at="2017-06-16T16:18:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyMoviesCount()[pri:1, instance:testcases.IMDBTest@6a4f787b]" name="verifyMoviesCount" duration-ms="10716" started-at="2017-06-16T16:18:46Z" finished-at="2017-06-16T16:18:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMoviesCount -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.NewTest@3bfdc050]" name="tearDown" is-config="true" duration-ms="1435" started-at="2017-06-14T17:20:27Z" finished-at="2017-06-14T17:20:28Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1371" started-at="2017-06-16T16:18:57Z" finished-at="2017-06-16T16:18:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.NewTest@3bfdc050]" name="setUp" is-config="true" duration-ms="4285" started-at="2017-06-14T17:20:28Z" finished-at="2017-06-14T17:20:33Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="4641" started-at="2017-06-16T16:18:58Z" finished-at="2017-06-16T16:19:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyMovieReleaseYear()[pri:2, instance:testcases.NewTest@3bfdc050]" name="verifyMovieReleaseYear" duration-ms="11926" started-at="2017-06-14T17:20:33Z" finished-at="2017-06-14T17:20:45Z">
+        <test-method status="PASS" signature="verifyMovieReleaseYear()[pri:2, instance:testcases.IMDBTest@6a4f787b]" name="verifyMovieReleaseYear" duration-ms="9713" started-at="2017-06-16T16:19:03Z" finished-at="2017-06-16T16:19:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMovieReleaseYear -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.NewTest@3bfdc050]" name="tearDown" is-config="true" duration-ms="1112" started-at="2017-06-14T17:20:45Z" finished-at="2017-06-14T17:20:46Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1126" started-at="2017-06-16T16:19:13Z" finished-at="2017-06-16T16:19:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.NewTest@3bfdc050]" name="setUp" is-config="true" duration-ms="5287" started-at="2017-06-14T17:20:46Z" finished-at="2017-06-14T17:20:51Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="4451" started-at="2017-06-16T16:19:14Z" finished-at="2017-06-16T16:19:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyMovieRating()[pri:3, instance:testcases.NewTest@3bfdc050]" name="verifyMovieRating" duration-ms="13172" started-at="2017-06-14T17:20:51Z" finished-at="2017-06-14T17:21:04Z">
+        <test-method status="PASS" signature="verifyMovieRating()[pri:3, instance:testcases.IMDBTest@6a4f787b]" name="verifyMovieRating" duration-ms="10397" started-at="2017-06-16T16:19:18Z" finished-at="2017-06-16T16:19:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMovieRating -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.NewTest@3bfdc050]" name="tearDown" is-config="true" duration-ms="1328" started-at="2017-06-14T17:21:04Z" finished-at="2017-06-14T17:21:05Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1480" started-at="2017-06-16T16:19:29Z" finished-at="2017-06-16T16:19:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="deleteDB()[pri:0, instance:testcases.NewTest@3bfdc050]" name="deleteDB" is-config="true" duration-ms="0" started-at="2017-06-14T17:21:05Z" finished-at="2017-06-14T17:21:05Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="4470" started-at="2017-06-16T16:19:30Z" finished-at="2017-06-16T16:19:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyDuplicateMovieData()[pri:4, instance:testcases.IMDBTest@6a4f787b]" name="verifyDuplicateMovieData" duration-ms="12843" started-at="2017-06-16T16:19:35Z" finished-at="2017-06-16T16:19:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDuplicateMovieData -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1291" started-at="2017-06-16T16:19:47Z" finished-at="2017-06-16T16:19:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="5104" started-at="2017-06-16T16:19:49Z" finished-at="2017-06-16T16:19:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyRankingSorting()[pri:5, instance:testcases.IMDBTest@6a4f787b]" name="verifyRankingSorting" duration-ms="22547" started-at="2017-06-16T16:19:54Z" finished-at="2017-06-16T16:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRankingSorting -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1113" started-at="2017-06-16T16:20:16Z" finished-at="2017-06-16T16:20:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="4605" started-at="2017-06-16T16:20:18Z" finished-at="2017-06-16T16:20:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyRatingSorting()[pri:6, instance:testcases.IMDBTest@6a4f787b]" name="verifyRatingSorting" duration-ms="25459" started-at="2017-06-16T16:20:22Z" finished-at="2017-06-16T16:20:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyRatingSorting -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1330" started-at="2017-06-16T16:20:48Z" finished-at="2017-06-16T16:20:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="setUp" is-config="true" duration-ms="4841" started-at="2017-06-16T16:20:49Z" finished-at="2017-06-16T16:20:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyReleaseDateSorting()[pri:7, instance:testcases.IMDBTest@6a4f787b]" name="verifyReleaseDateSorting" duration-ms="38611" started-at="2017-06-16T16:20:54Z" finished-at="2017-06-16T16:21:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyReleaseDateSorting -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="tearDown" is-config="true" duration-ms="1214" started-at="2017-06-16T16:21:32Z" finished-at="2017-06-16T16:21:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="deleteDB()[pri:0, instance:testcases.IMDBTest@6a4f787b]" name="deleteDB" is-config="true" duration-ms="1" started-at="2017-06-16T16:21:34Z" finished-at="2017-06-16T16:21:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteDB -->
-      </class> <!-- testcases.NewTest -->
+      </class> <!-- testcases.IMDBTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

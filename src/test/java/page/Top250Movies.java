@@ -18,12 +18,15 @@ import org.testng.Assert;
 
 import db.DBOperations;
 import testcases.IMDBTest;
-import testcases.IMDBTest;
+
 
 public class Top250Movies extends IMDBTest {
 
 	EventFiringWebDriver driver;
 	String imdbTop250PageTitle = "IMDb Top 250 - IMDb";
+	
+	@FindAll({ @FindBy(how = How.XPATH, using = "//td[@class='titleColumn']") })
+	public List<WebElement> rankEl;
 
 	@FindAll({ @FindBy(how = How.XPATH, using = "//td[@class='titleColumn']//a") })
 	public List<WebElement> movieNamesEl;
@@ -38,7 +41,9 @@ public class Top250Movies extends IMDBTest {
 	public Top250Movies(EventFiringWebDriver driver) {
 
 		this.driver = driver;
+	
 		PageFactory.initElements(driver, this);
+		
 
 	}
 
@@ -98,10 +103,11 @@ public class Top250Movies extends IMDBTest {
 
 		// Create imdb250 table in imdb db
 		db.createTable();
-
+		
 		// Insert movie details in the table
-		for (int i = 0; i < 4; i++) {
-			db.insert(movieNamesEl.get(i).getText(), yearEl.get(i).getText().replaceAll("[^0-9]+", ""),
+		for (int i = 0; i < 250; i++) {
+			
+			db.insert(rankEl.get(i).getText().split("\\.")[0],movieNamesEl.get(i).getText(), yearEl.get(i).getText().replaceAll("[^0-9]+", ""),
 					ratingEl.get(i).getText());
 		}
 

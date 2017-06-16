@@ -20,8 +20,6 @@ public class DBOperations {
 	 */
 	public void createNewDatabase() {
 
-		String url = "jdbc:sqlite:" + System.getProperty("user.dir") + "/database/imdb.db";
-
 		try {
 			if (conn != null) {
 				DatabaseMetaData meta = conn.getMetaData();
@@ -39,7 +37,7 @@ public class DBOperations {
 	 */
 	public void createTable() {
 
-		String sql = "CREATE TABLE imdb250 (movie varchar(250), year varchar(10), rating varchar(10))";
+		String sql = "CREATE TABLE imdb250 (rank varchar(10),movie varchar(200), year varchar(10), rating varchar(10))";
 
 		Statement stmt = null;
 
@@ -61,7 +59,7 @@ public class DBOperations {
 	public Connection connect() {
 		// SQLite connection string
 		String url = "jdbc:sqlite:" + System.getProperty("user.dir") + "/database/imdb.db";
-		System.out.println(url);
+		// System.out.println(url);
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(url);
@@ -78,14 +76,15 @@ public class DBOperations {
 	 * @param year
 	 * @param rating
 	 */
-	public void insert(String movie, String year, String rating) {
-		String sql = "INSERT INTO imdb250(movie,year,rating) VALUES(?,?,?)";
-		System.out.println("Inserting " + movie + " :" + year + " :" + rating);
+	public void insert(String rank, String movie, String year, String rating) {
+		String sql = "INSERT INTO imdb250(rank,movie,year,rating) VALUES(?,?,?,?)";
+		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, movie);
-			pstmt.setString(2, year);
-			pstmt.setString(3, rating);
+			pstmt.setString(1, rank);
+			pstmt.setString(2, movie);
+			pstmt.setString(3, year);
+			pstmt.setString(4, rating);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -105,8 +104,8 @@ public class DBOperations {
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
-				System.out.println("Movie Name : " + rs.getString(1) + ", " + "Movie Release Year : " + rs.getString(2)
-						+ ", " + "IMDB Rating : " + rs.getString(3));
+				System.out.println("Rank : " + rs.getString(1) + ", " + " Movie Name : " + rs.getString(2) + ", "
+						+ " Movie Release Year : " + rs.getString(3) + ", " + " IMDB Rating : " + rs.getString(4));
 
 			}
 

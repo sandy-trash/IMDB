@@ -10,9 +10,14 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -20,10 +25,10 @@ import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 
 public class IMDBTest {
 
@@ -95,10 +100,10 @@ public class IMDBTest {
 		System.out.println("Created browser instance successfully");
 
 	}
-	
+
 	@Test(priority = 0)
 	public void preRequisite() throws InterruptedException, IOException {
-		
+
 		// Create page object
 		Top250Movies top = new Top250Movies(driver);
 
@@ -107,7 +112,7 @@ public class IMDBTest {
 
 		// Fetch movie details from the page and store in database
 		top.storeData();
-		
+
 	}
 
 	@Test(priority = 1)
@@ -140,7 +145,7 @@ public class IMDBTest {
 
 		DBOperations db = new DBOperations();
 		String expectedYear = db.getDetails("year", movie);
-		System.out.println(actualYear+ " "+expectedYear);
+		System.out.println(actualYear + " " + expectedYear);
 
 		// Assert Movie Release Year displayed on page with DB value
 		try {
@@ -171,7 +176,7 @@ public class IMDBTest {
 
 		DBOperations db = new DBOperations();
 		String expectedRating = db.getDetails("rating", movie);
-		System.out.println(actualRating + " "+expectedRating);
+		System.out.println(actualRating + " " + expectedRating);
 
 		// Assert Movie Release Year displayed on page with DB value
 		try {
@@ -185,6 +190,127 @@ public class IMDBTest {
 
 		}
 
+	}
+
+	@Test(priority = 4)
+	public void verifyDuplicateMovieData() throws InterruptedException, IOException {
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+
+		HashSet<String> unique = new HashSet<String>();
+		String str = null;
+		for (WebElement e : top.movieNamesEl) {
+			str = e.getText();
+			if (unique.contains(str)) {
+				System.out.println(failTest + " : IMDB page has duplicate movie names in the Top 250 movie list.");
+				break;
+			} else
+				unique.add(str);
+		}
+	}
+
+	@Test(priority = 5)
+	public void verifyRankingSorting() throws InterruptedException, IOException {
+
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+
+		try {
+			// Locate drop-down field
+			Select select = new Select(driver.findElement(By.name("sort")));
+
+			// Select value from drop-down
+			select.selectByVisibleText("Ranking");
+
+		} catch (NoSuchElementException ex) {
+			System.out.println("Sort by element is not present");
+		}
+		List<WebElement> rankEl = driver.findElements(By.xpath("//td[@class='titleColumn']"));
+
+		int temp = 0;
+
+		for (WebElement el : rankEl) {
+
+			if (Integer.parseInt(el.getText().split("\\.")[0]) < temp) {
+
+				System.out.println(failTest + " : Page is not sorted on the basis of rank.");
+				break;
+			}
+			temp = Integer.parseInt(el.getText().split("\\.")[0]);
+		}
+	}
+
+	@Test(priority = 6)
+	public void verifyRatingSorting() throws InterruptedException, IOException {
+
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+		try {
+			// Locate drop-down field
+			Select select = new Select(driver.findElement(By.name("sort")));
+
+			// Select value from drop-down
+			select.selectByVisibleText("IMDb Rating");
+
+		} catch (NoSuchElementException ex) {
+			System.out.println("Sort by element is not present");
+		}
+		List<WebElement> ratingEl = driver.findElements(By.xpath("//td[contains(@class,'imdbRating')]"));
+
+		double temp = 12.0;
+
+		for (WebElement el : ratingEl) {
+			System.out.println(Double.parseDouble(el.getText()));
+			if (Double.parseDouble(el.getText()) > temp) {
+				System.out.println(failTest + " : Page is not sorted on the basis of rating.");
+				break;
+			}
+			temp = Double.parseDouble(el.getText());
+		}
+	}
+
+	@Test(priority = 7)
+	public void verifyReleaseDateSorting() throws InterruptedException, IOException {
+
+		// Create page object
+		Top250Movies top = new Top250Movies(driver);
+
+		// Navigate to the IMDB top 250 movies page
+		top.navigate();
+
+		try {
+			// Locate drop-down field
+			Select select = new Select(driver.findElement(By.name("sort")));
+
+			// Select value from drop-down
+			select.selectByVisibleText("Release Date");
+
+		} catch (NoSuchElementException ex) {
+			System.out.println("Sort by element is not present");
+		}
+		List<WebElement> dateEl = driver.findElements(By.xpath("//td[@class='titleColumn']//span"));
+		
+		int temp = 20000;
+
+		for (WebElement el : dateEl) {
+
+			if (Integer.parseInt(el.getText().replaceAll("[^0-9]+", "")) > temp) {
+				
+				System.out.println(failTest + " : Page is not sorted on the basis of release year.");
+				
+				break;
+			}
+			temp = Integer.parseInt(el.getText().replaceAll("[^0-9]+", ""));
+		}
 	}
 
 	@AfterMethod

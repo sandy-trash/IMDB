@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testcases.NewTest">
+      <class name="testcases.IMDBTest">
         <methods>
-          <include name="setUp"/>
-          <include name="verifyMovieRating"/>
-          <include name="tearDown"/>
           <include name="deleteDB"/>
-          <include name="preRequisite"/>
+          <include name="tearDown"/>
+          <include name="verifyRankingSorting"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- testcases.NewTest -->
+      </class> <!-- testcases.IMDBTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
