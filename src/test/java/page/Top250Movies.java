@@ -103,6 +103,7 @@ public class Top250Movies extends IMDBTest {
 
 		// Create imdb250 table in imdb db
 		db.createTable();
+		System.out.println("Please wait while database is getting updated with movie details, it will take 4-5 minutes to update...");
 		
 		// Insert movie details in the table
 		for (int i = 0; i < 250; i++) {

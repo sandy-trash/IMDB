@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [testcases.IMDBTest]">
+  <test name="Command line test(failed)" preserve-order="false">
+    <classes>
+      <class name="testcases.IMDBTest">
+        <methods>
+          <include name="verifyDuplicateMovieData"/>
+          <include name="verifyRatingSorting"/>
+          <include name="verifyMoviesCount"/>
+          <include name="deleteDB"/>
+          <include name="verifyReleaseDateSorting"/>
+          <include name="tearDown"/>
+          <include name="preRequisite"/>
+          <include name="verifyRankingSorting"/>
+          <include name="setUp"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

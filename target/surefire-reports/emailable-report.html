@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Command line test</td><td class="numi">2</td><td class="numi">2</td><td class="numi">0</td><td class="numi_attn">6</td><td class="numi">98.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>
+<tr><th colspan="4">Command line test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="6">testcases.IMDBTest<td><a href="#m1"><b>verifyRatingSorting</b>  </a></td><td class="numi">1</td><td class="numi">9840</td></tr><tr class="failedodd"><td><a href="#m2"><b>verifyDuplicateMovieData</b>  </a></td><td class="numi">1</td><td class="numi">9950</td></tr><tr class="failedodd"><td><a href="#m3"><b>verifyMoviesCount</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr><tr class="failedodd"><td><a href="#m4"><b>preRequisite</b>  </a></td><td class="numi">1</td><td class="numi">17310</td></tr><tr class="failedodd"><td><a href="#m5"><b>verifyReleaseDateSorting</b>  </a></td><td class="numi">1</td><td class="numi">3</td></tr><tr class="failedodd"><td><a href="#m6"><b>verifyRankingSorting</b>  </a></td><td class="numi">1</td><td class="numi">2</td></tr>
+<tr><th colspan="4">Command line test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="2">testcases.IMDBTest<td><a href="#m7"><b>verifyMovieReleaseYear</b>  </a></td><td class="numi">1</td><td class="numi">6074</td></tr><tr class="passedodd"><td><a href="#m8"><b>verifyMovieRating</b>  </a></td><td class="numi">1</td><td class="numi">6713</td></tr>
+</table>
+<h1>Command line test</h1>
+<a id="m1"></a><h2>testcases.IMDBTest:verifyRatingSorting</h2>
+<div style="padding-left:3em">
+<p>Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 37dae086-47ed-4b93-8d4d-c10d5a8f3f83</p>
+org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:461)
+<br/>at org.openqa.selenium.By$ByName.findElement(By.java:303)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElement(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)
+<br/>at testcases.IMDBTest.verifyRatingSorting(IMDBTest.java:296)
+<br/>35 lines not shown
+<p>Caused by Connect to 127.0.0.1:7056 [/127.0.0.1] failed: Connection refused: connect</p>
+org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+<br/>at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+<br/>at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+<br/>at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+<br/>at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+<br/>at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+<br/>at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+<br/>at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+<br/>at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:160)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:461)
+<br/>at org.openqa.selenium.By$ByName.findElement(By.java:303)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElement(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)
+<br/>at testcases.IMDBTest.verifyRatingSorting(IMDBTest.java:296)
+<br/>35 lines not shown
+<p>Caused by Connection refused: connect</p>
+java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+<br/>at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+<br/>at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+<br/>at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+<br/>at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+<br/>at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+<br/>at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+<br/>at java.net.Socket.connect(Socket.java:589)
+<br/>at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+<br/>at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+<br/>at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+<br/>at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+<br/>at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+<br/>at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+<br/>at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+<br/>at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+<br/>at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+<br/>at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:160)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:461)
+<br/>at org.openqa.selenium.By$ByName.findElement(By.java:303)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElement(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)
+<br/>at testcases.IMDBTest.verifyRatingSorting(IMDBTest.java:296)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>testcases.IMDBTest:verifyDuplicateMovieData</h2>
+<div style="padding-left:3em">
+<p>Error communicating with the remote browser. It may have died.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: EventFiringWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5cd0e2ec-272a-41be-be57-64cf45b85662</p>
+org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+<br/>at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+<br/>at org.openqa.selenium.support.pagefactory.ByAll.findElements(ByAll.java:63)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+<br/>at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElements(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElements(EventFiringWebDriver.java:177)
+<br/>at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:85)
+<br/>at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:36)
+<br/>at com.sun.proxy.$Proxy9.iterator(Unknown Source)
+<br/>at testcases.IMDBTest.verifyDuplicateMovieData(IMDBTest.java:242)
+<br/>35 lines not shown
+<p>Caused by Connect to 127.0.0.1:7056 [/127.0.0.1] failed: Connection refused: connect</p>
+org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+<br/>at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+<br/>at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+<br/>at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+<br/>at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+<br/>at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+<br/>at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+<br/>at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+<br/>at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:160)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+<br/>at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+<br/>at org.openqa.selenium.support.pagefactory.ByAll.findElements(ByAll.java:63)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+<br/>at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElements(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElements(EventFiringWebDriver.java:177)
+<br/>at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:85)
+<br/>at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:36)
+<br/>at com.sun.proxy.$Proxy9.iterator(Unknown Source)
+<br/>at testcases.IMDBTest.verifyDuplicateMovieData(IMDBTest.java:242)
+<br/>35 lines not shown
+<p>Caused by Connection refused: connect</p>
+java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+<br/>at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+<br/>at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+<br/>at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+<br/>at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+<br/>at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+<br/>at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+<br/>at java.net.Socket.connect(Socket.java:589)
+<br/>at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+<br/>at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+<br/>at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+<br/>at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+<br/>at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+<br/>at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+<br/>at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+<br/>at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+<br/>at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+<br/>at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+<br/>at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+<br/>at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+<br/>at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:160)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:380)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+<br/>at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+<br/>at org.openqa.selenium.support.pagefactory.ByAll.findElements(ByAll.java:63)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+<br/>at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElements(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElements(EventFiringWebDriver.java:177)
+<br/>at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:85)
+<br/>at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:36)
+<br/>at com.sun.proxy.$Proxy9.iterator(Unknown Source)
+<br/>at testcases.IMDBTest.verifyDuplicateMovieData(IMDBTest.java:242)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>testcases.IMDBTest:verifyMoviesCount</h2>
+<div style="padding-left:3em">
+<p>The FirefoxDriver cannot be used after quit() was called.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: EventFiringWebDriver</p>
+org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:377)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+<br/>at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+<br/>at org.openqa.selenium.support.pagefactory.ByAll.findElements(ByAll.java:63)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+<br/>at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElements(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElements(EventFiringWebDriver.java:177)
+<br/>at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:85)
+<br/>at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:36)
+<br/>at com.sun.proxy.$Proxy9.size(Unknown Source)
+<br/>at testcases.IMDBTest.verifyMoviesCount(IMDBTest.java:164)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>testcases.IMDBTest:preRequisite</h2>
+<div style="padding-left:3em">
+<p>Window not found. The browser window may have been closed.
+Command duration or timeout: 392 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 055b2895-bedb-4228-9b48-bb003fb50209
+*** Element info: {Using=xpath, value=//td[@class=&apos;titleColumn&apos;]}</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:388)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:504)
+<br/>at org.openqa.selenium.By$ByXPath.findElements(By.java:356)
+<br/>at org.openqa.selenium.support.pagefactory.ByAll.findElements(ByAll.java:63)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:351)
+<br/>at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElements(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElements(EventFiringWebDriver.java:177)
+<br/>at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElements(DefaultElementLocator.java:85)
+<br/>at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:36)
+<br/>at com.sun.proxy.$Proxy9.get(Unknown Source)
+<br/>at page.Top250Movies.storeData(Top250Movies.java:111)
+<br/>at testcases.IMDBTest.preRequisite(IMDBTest.java:152)
+<br/>35 lines not shown
+<p>Caused by Window not found. The browser window may have been closed.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: unknown</p>
+&lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12719)
+<br/>at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9558)
+<br/>at &lt;anonymous class&gt;.Resource.prototype.handle(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9705)
+<br/>at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9652)
+<br/>at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12517)
+<br/>at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2054)
+<br/>at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2387)
+<br/>at &lt;anonymous class&gt;.Connection.prototype.process(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1223)
+<br/>at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1677)
+<br/>at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1525)
+<br/>at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///C:/Users/sandeeps/AppData/Local/Temp/anonymous748417113413168939webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1393)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>testcases.IMDBTest:verifyReleaseDateSorting</h2>
+<div style="padding-left:3em">
+<p>The FirefoxDriver cannot be used after quit() was called.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: EventFiringWebDriver</p>
+org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:377)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:461)
+<br/>at org.openqa.selenium.By$ByName.findElement(By.java:303)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElement(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)
+<br/>at testcases.IMDBTest.verifyReleaseDateSorting(IMDBTest.java:329)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>testcases.IMDBTest:verifyRankingSorting</h2>
+<div style="padding-left:3em">
+<p>The FirefoxDriver cannot be used after quit() was called.
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;sandeeps7&apos;, ip: &apos;172.16.238.65&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_92&apos;
+Driver info: driver.version: EventFiringWebDriver</p>
+org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:377)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:461)
+<br/>at org.openqa.selenium.By$ByName.findElement(By.java:303)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+<br/>at java.lang.reflect.Method.invoke(Method.java:498)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:103)
+<br/>at com.sun.proxy.$Proxy6.findElement(Unknown Source)
+<br/>at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:188)
+<br/>at testcases.IMDBTest.verifyRankingSorting(IMDBTest.java:263)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>testcases.IMDBTest:verifyMovieReleaseYear</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>testcases.IMDBTest:verifyMovieRating</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

@@ -27,8 +27,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 
 public class IMDBTest {
 
@@ -37,6 +37,27 @@ public class IMDBTest {
 	public static Properties CONFIG = null;
 	public static DesiredCapabilities dc = null;
 	public static String failTest = "Fail";
+	
+	@BeforeClass
+	public void deleteDB() {
+		// Delete the SQLite db
+		try {
+
+			File file = new File(System.getProperty("user.dir") + "\\database\\imdb.db");
+
+			if (file.exists()) {
+				file.delete();
+				System.out.println(file.getName() + " is deleted!");
+			} else {
+				System.out.println("Delete operation is failed.");
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+	}
 
 	@BeforeMethod
 	public void setUp() throws IOException {
@@ -98,6 +119,23 @@ public class IMDBTest {
 		}
 
 		System.out.println("Created browser instance successfully");
+		// Delete the SQLite db if already present
+		try {
+
+			File file = new File(System.getProperty("user.dir") + "\\database\\imdb.db");
+
+			if (file.exists()) {
+				file.delete();
+				System.out.println(file.getName() + " is deleted!");
+			} else {
+				System.out.println("Delete operation is failed.");
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
 
 	}
 
@@ -145,7 +183,6 @@ public class IMDBTest {
 
 		DBOperations db = new DBOperations();
 		String expectedYear = db.getDetails("year", movie);
-		System.out.println(actualYear + " " + expectedYear);
 
 		// Assert Movie Release Year displayed on page with DB value
 		try {
@@ -269,7 +306,7 @@ public class IMDBTest {
 		double temp = 12.0;
 
 		for (WebElement el : ratingEl) {
-			System.out.println(Double.parseDouble(el.getText()));
+
 			if (Double.parseDouble(el.getText()) > temp) {
 				System.out.println(failTest + " : Page is not sorted on the basis of rating.");
 				break;
@@ -298,15 +335,15 @@ public class IMDBTest {
 			System.out.println("Sort by element is not present");
 		}
 		List<WebElement> dateEl = driver.findElements(By.xpath("//td[@class='titleColumn']//span"));
-		
+
 		int temp = 20000;
 
 		for (WebElement el : dateEl) {
 
 			if (Integer.parseInt(el.getText().replaceAll("[^0-9]+", "")) > temp) {
-				
+
 				System.out.println(failTest + " : Page is not sorted on the basis of release year.");
-				
+
 				break;
 			}
 			temp = Integer.parseInt(el.getText().replaceAll("[^0-9]+", ""));
@@ -329,24 +366,5 @@ public class IMDBTest {
 		}
 
 	}
-
-	@AfterClass
-	public void deleteDB() {
-		// Delete the SQLite db
-		try {
-
-			File file = new File(System.getProperty("user.dir") + "/database/imdb.db");
-
-			if (file.delete()) {
-				System.out.println(file.getName() + " is deleted!");
-			} else {
-				System.out.println("Delete operation is failed.");
-			}
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-
-		}
-	}
+	
 }
